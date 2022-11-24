@@ -1,0 +1,91 @@
+[facility]
+name = "Advanced Photon Source"
+
+[beamline]
+name = "25-ID-C"
+is_connected = true
+
+[shutter]
+
+[shutter.A]
+
+open_pv = "PSS:25ID:FES_OPEN_EPICS.VAL"
+close_pv = "PSS:25ID:FES_CLOSE_EPICS.VAL"
+status_pv = "PSS:25ID:A_BEAM_PRESENT"
+
+[shutter.C]
+
+open_pv = "PSS:25ID:SCS_OPEN_EPICS.VAL"
+close_pv = "PSS:25ID:SCS_CLOSE_EPICS.VAL"
+status_pv = "PSS:25ID:C_BEAM_PRESENT"
+
+[ion_chamber.scaler]
+ioc = "25idcVME"
+record = "3820:scaler1"
+
+[ion_chamber.preamp]
+ioc = "25idc"
+
+[ion_chamber.ch2]
+# scaler_channel = 2
+preamp_record = "SR01:IpreSlit"
+
+[ion_chamber.ch3]
+# scaler_channel = 3
+preamp_record = "SR02:IpreKB"
+
+[ion_chamber.ch4]
+# scaler_channel = 4
+preamp_record = "SR03:I0"
+
+[ion_chamber.ch5]
+# scaler_channel = 5
+preamp_record = "SR04:It"
+
+[motor]
+iocs = ["25idcVME"]
+
+[stage.Aerotech]
+prefix = "25idc"
+pv_vert = ":m2"
+pv_horiz = ":m1"
+
+[monochromator]
+ioc = "25idDCM:AS"
+energy_ioc = "25idb:DCM:AS"
+
+[undulator]
+ioc = "ID25ds"
+
+[camera]
+imagej_command = "/home/beams/S25IDCUSER/ImageJ/ImageJ"
+
+[camera.camBPM]
+name = "Hutch A BPM"
+description = "Hutch A BPM"
+ioc = "25idaBPM"
+
+[camera.camA]
+name = "s25id-gige-A"
+description = "GigE Vision A"
+ioc = "25idgigeA"
+
+[camera.camB]
+name = "s25id-gige-B"
+description = "GigE Vision B"
+ioc = "25idgigeB"
+
+[camera.camC]
+name = "s25id-gige-C"
+description = "GigE Vision C"
+ioc = "25idgigeC"
+
+[camera.camD]
+name = "s25id-gige-D"
+description = "GigE Vision D"
+ioc = "25idgigeD"
+
+[camera.camE]
+name = "s25id-gige-E"
+description = "GigE Vision E"
+ioc = "25idgigeE"
