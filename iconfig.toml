@@ -5,6 +5,10 @@ name = "Advanced Photon Source"
 name = "25-ID-C"
 is_connected = true
 
+[database.databroker]
+
+catalog = "s25idc"
+
 [shutter]
 
 [shutter.A]
