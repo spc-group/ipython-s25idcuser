@@ -28,22 +28,39 @@ ioc = "25idc"
 
 [ion_chamber.ch2]
 # scaler_channel = 2
-preamp_record = "SR01:IpreSlit"
+preamp_record = "SR01"
 
 [ion_chamber.ch3]
 # scaler_channel = 3
-preamp_record = "SR02:IpreKB"
+preamp_record = "SR02"
 
 [ion_chamber.ch4]
 # scaler_channel = 4
-preamp_record = "SR03:I0"
+preamp_record = "SR03"
 
 [ion_chamber.ch5]
 # scaler_channel = 5
-preamp_record = "SR04:It"
+preamp_record = "SR04"
 
-[motor]
-iocs = ["25idcVME"]
+[motor.VME_crate]
+prefix = "25idcVME"
+num_motors = 56
+
+[motor.ORM1]
+prefix = "25ida:ORM1"
+num_motors = 4
+
+[motor.ORM2]
+prefix = "25ida:ORM2"
+num_motors = 5
+
+[motor.WB_slit]
+prefix = "25ida:slits"
+num_motors = 8
+
+[motor.BPM]
+prefix = "25ida:BPM"
+num_motors = 1
 
 [stage.Aerotech]
 prefix = "25idc"
