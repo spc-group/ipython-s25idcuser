@@ -9,6 +9,13 @@ is_connected = true
 
 catalog = "s25idc"
 
+[queueserver]
+kafka_topic = "s25idc_queueserver"
+control_host = "fedorov"
+control_port = "60615"
+info_host = "fedorov"
+info_port = "60625"
+
 [shutter]
 
 [shutter.A]
