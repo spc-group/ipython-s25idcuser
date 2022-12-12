@@ -72,8 +72,8 @@ pv_vert = ":m2"
 pv_horiz = ":m1"
 
 [monochromator]
-ioc = "25idDCM:AS"
-energy_ioc = "25idb:DCM:AS"
+ioc = "25idbUP"
+ioc_branch = "UP"
 
 [undulator]
 ioc = "ID25ds"
