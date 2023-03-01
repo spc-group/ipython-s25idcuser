@@ -5,13 +5,18 @@ name = "Advanced Photon Source"
 name = "25-ID-C"
 is_connected = true
 
+[xray_source]
+
+type = "undulator"
+prefix = "ID25ds:"
+
 [database.databroker]
 
 catalog = "s25idc"
 
 [queueserver]
 kafka_topic = "s25idc_queueserver"
-control_host = "fedorov"
+control_host = "164.54.135.25"
 control_port = "60615"
 info_host = "fedorov"
 info_port = "60625"
@@ -33,25 +38,14 @@ status_pv = "PSS:25ID:C_BEAM_PRESENT"
 [ion_chamber.scaler]
 ioc = "25idcVME"
 record = "3820:scaler1"
+channels = [2, 3, 4, 5, 6, 7, 8]
 
 [ion_chamber.preamp]
 ioc = "25idc"
 
-[ion_chamber.ch2]
-# scaler_channel = 2
-preamp_record = "SR01"
+[slits.KB_slits]
 
-[ion_chamber.ch3]
-# scaler_channel = 3
-preamp_record = "SR02"
-
-[ion_chamber.ch4]
-# scaler_channel = 4
-preamp_record = "SR03"
-
-[ion_chamber.ch5]
-# scaler_channel = 5
-preamp_record = "SR04"
+prefix = "25idcVME:KB"
 
 [motor.VME_crate]
 prefix = "25idcVME"
@@ -85,6 +79,11 @@ ioc_branch = "UP"
 [undulator]
 ioc = "ID25ds"
 
+[fluorescence_detector.vortex_me4]
+prefix = "20xmap4b"
+electronics = "dxp"  # or "xspress3"
+num_elements = 4
+
 [camera]
 imagej_command = "/home/beams/S25IDCUSER/ImageJ/ImageJ"
 
@@ -117,3 +116,18 @@ ioc = "25idgigeD"
 name = "s25id-gige-E"
 description = "GigE Vision E"
 ioc = "25idgigeE"
+
+[power_supply.NHQ01]
+
+prefix = "25idc:NHQ01"
+n_channels = 2
+
+[area_detector.sim_det]
+
+prefix = "25idSimDet"
+device_class = "SimDetector"
+
+[area_detector.cyclops]
+
+prefix = "25idLambda250K"
+device_class = "Lambda250K"
